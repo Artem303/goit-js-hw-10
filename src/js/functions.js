@@ -1,0 +1,26 @@
+export class OtherFunctions {
+  murkupOptions(values, element) {
+    element.innerHTML = values
+      .map(value => `<option value="${value.id}">${value.name}</option>`)
+      .join('');
+  }
+
+  onHidden(value) {
+    value.classList.add('hidden');
+  }
+
+  offHidden(value) {
+    value.classList.remove('hidden');
+  }
+
+  murkupCard(value, element) {
+    element.innerHTML = value.map(
+      item => `<div class="cat-info">
+      <img class='img' src="${item.url}" alt="${item.name}" />
+      <h2>${item.breeds[0].name}</h2>
+      <p>${item.breeds[0].description}</p>
+      <p><b>Temperament: </b>${item.breeds[0].temperament}</p>
+    </div>`
+    );
+  }
+}
