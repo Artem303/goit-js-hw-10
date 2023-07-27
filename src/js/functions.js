@@ -17,10 +17,12 @@ export class OtherFunctions {
     element.innerHTML = value.map(
       item => `<div class="cat-info">
       <img class='img' src="${item.url}" alt="${item.name}" />
+     <div class="desc-container">
       <h2>${item.breeds[0].name}</h2>
       <p>${item.breeds[0].description}</p>
       <p><b>Temperament: </b>${item.breeds[0].temperament}</p>
-    </div>`
+      </div>
+      </div>`
     );
   }
 }

@@ -16,7 +16,7 @@ breedsInstance
     otherFunctions.murkupOptions(r, selectEl);
     otherFunctions.offHidden(selectEl);
   })
-  .catch(console.warn);
+  .catch(error => otherFunctions.offHidden(errorEl));
 
 selectEl.addEventListener('change', handlCreateCard);
 
@@ -33,5 +33,9 @@ function handlCreateCard(evt) {
       otherFunctions.onHidden(loaderEl);
       otherFunctions.offHidden(containerEl);
     })
-    .catch(console.log);
+    .catch(error => {
+      otherFunctions.onHidden(loaderEl);
+      otherFunctions.onHidden(selectEl);
+      otherFunctions.offHidden(errorEl);
+    });
 }

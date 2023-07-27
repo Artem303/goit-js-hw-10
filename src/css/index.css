@@ -3,5 +3,20 @@
 }
 
 .img {
-    width: 300px;
+    max-width: 300px;
+}
+.cat-info {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.desc-container {
+    max-width: 600px;
+}
+
+.error {
+    color: red;
+    font-size: 40px
+
 }
