@@ -16,7 +16,7 @@ export class OtherFunctions {
   murkupCard(value, element) {
     element.innerHTML = value.map(
       item => `<div class="cat-info">
-      <img class='img' src="${item.url}" alt="${item.name}" />
+      <img width=300 class='img' src="${item.url}" alt="${item.name}" />
      <div class="desc-container">
       <h2>${item.breeds[0].name}</h2>
       <p>${item.breeds[0].description}</p>

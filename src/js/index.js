@@ -1,5 +1,6 @@
 import { BreedsAPI } from './cat-api';
 import { OtherFunctions } from './functions';
+import Notiflix from 'notiflix';
 
 const selectEl = document.querySelector('.breed-select');
 const loaderEl = document.querySelector('.loader');
@@ -16,14 +17,17 @@ breedsInstance
     otherFunctions.murkupOptions(r, selectEl);
     otherFunctions.offHidden(selectEl);
   })
-  .catch(error => otherFunctions.offHidden(errorEl));
+  .catch(error => {
+    otherFunctions.offHidden(errorEl);
+    Notiflix.Notify.failure('ERROR!');
+  });
 
 selectEl.addEventListener('change', handlCreateCard);
 
 function handlCreateCard(evt) {
   let idCat = evt.target.value;
-  otherFunctions.onHidden(containerEl);
   otherFunctions.offHidden(loaderEl);
+  otherFunctions.onHidden(containerEl);
 
   breedsInstance
     .fetchCatById(idCat)
@@ -37,5 +41,6 @@ function handlCreateCard(evt) {
       otherFunctions.onHidden(loaderEl);
       otherFunctions.onHidden(selectEl);
       otherFunctions.offHidden(errorEl);
+      Notiflix.Notify.failure('ERROR!');
     });
 }
