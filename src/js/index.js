@@ -26,6 +26,8 @@ selectEl.addEventListener('change', handlCreateCard);
 
 function handlCreateCard(evt) {
   let idCat = evt.target.value;
+
+  containerEl.innerHTML = '';
   otherFunctions.offHidden(loaderEl);
   otherFunctions.onHidden(containerEl);
 
