@@ -19,6 +19,7 @@ export class BreedsAPI {
         if (!resp.ok) {
           throw new Error(resp.status);
         }
+
         return resp.json();
       })
       .catch(console.warn);

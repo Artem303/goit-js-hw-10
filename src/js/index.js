@@ -38,6 +38,11 @@ function handlCreateCard(evt) {
       otherFunctions.murkupCard(arr, containerEl);
       otherFunctions.onHidden(loaderEl);
       otherFunctions.offHidden(containerEl);
+      if (!containerEl.innerHTML) {
+        Notiflix.Notify.failure(
+          'Oops! Something went wrong! Try reloading the page!'
+        );
+      }
     })
     .catch(error => {
       otherFunctions.onHidden(loaderEl);
